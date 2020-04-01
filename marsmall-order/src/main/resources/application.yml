@@ -1,0 +1,23 @@
+server:
+  port: 9000
+
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/marsmall_oms?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: ggg123456
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+      discovery:
+        server-addr: localhost:8848
+  application:
+    name: marsmall-order
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+
