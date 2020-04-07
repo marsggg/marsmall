@@ -3,7 +3,9 @@ package com.ggg.marsmall.product.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.ggg.common.utils.PageUtils;
 import com.ggg.marsmall.product.entity.AttrGroupEntity;
+import com.ggg.marsmall.product.vo.AttrGroupWithAttrsVo;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,5 +18,9 @@ import java.util.Map;
 public interface AttrGroupService extends IService<AttrGroupEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    PageUtils queryPage(Map<String, Object> params, Long catelogId);
+
+    List<AttrGroupWithAttrsVo> getAttrGroupWithAttrsByCatelogId(Long catelogId);
 }
 

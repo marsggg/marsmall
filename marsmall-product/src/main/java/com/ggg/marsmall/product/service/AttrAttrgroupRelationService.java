@@ -3,7 +3,9 @@ package com.ggg.marsmall.product.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.ggg.common.utils.PageUtils;
 import com.ggg.marsmall.product.entity.AttrAttrgroupRelationEntity;
+import com.ggg.marsmall.product.vo.AttrGroupRelationVo;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,5 +18,9 @@ import java.util.Map;
 public interface AttrAttrgroupRelationService extends IService<AttrAttrgroupRelationEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    void deleteBatchRelation(List<AttrAttrgroupRelationEntity> entities);
+
+    void saveBatch(AttrGroupRelationVo[] vos);
 }
 

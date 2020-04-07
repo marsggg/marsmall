@@ -1,14 +1,15 @@
 package com.ggg.marsmall.product.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.ggg.marsmall.product.entity.BrandEntity;
+import com.ggg.marsmall.product.vo.BrandVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.ggg.marsmall.product.entity.CategoryBrandRelationEntity;
 import com.ggg.marsmall.product.service.CategoryBrandRelationService;
@@ -29,6 +30,37 @@ import com.ggg.common.utils.R;
 public class CategoryBrandRelationController {
     @Autowired
     private CategoryBrandRelationService categoryBrandRelationService;
+
+
+    /**
+     * 列表
+     */
+    @GetMapping("/catelog/list")
+    //@RequiresPermissions("product:categorybrandrelation:list")
+    public R cateList(@RequestParam Long brandId){
+        List<CategoryBrandRelationEntity> list = categoryBrandRelationService.list(
+                new QueryWrapper<CategoryBrandRelationEntity>().eq("brand_id",brandId));
+
+        return R.ok().put("data", list);
+    }
+
+
+    /**
+     * 列表
+     */
+    @RequestMapping("/brands/list")
+    //@RequiresPermissions("product:categorybrandrelation:list")
+    public R brandList(@RequestParam(required = true,value = "catId") Long catId){
+        List<BrandEntity> brandEntities = categoryBrandRelationService.getBrandListByCatId(catId);
+        List<BrandVo> vos = brandEntities.stream().map(item -> {
+            BrandVo brandVo = new BrandVo();
+            brandVo.setBrandId(item.getBrandId());
+            brandVo.setBrandName(item.getName());
+            return brandVo;
+        }).collect(Collectors.toList());
+
+        return R.ok().put("data", vos);
+    }
 
     /**
      * 列表
@@ -59,7 +91,8 @@ public class CategoryBrandRelationController {
     @RequestMapping("/save")
     //@RequiresPermissions("product:categorybrandrelation:save")
     public R save(@RequestBody CategoryBrandRelationEntity categoryBrandRelation){
-            categoryBrandRelationService.save(categoryBrandRelation);
+
+            categoryBrandRelationService.saveDetail(categoryBrandRelation);
 
         return R.ok();
     }

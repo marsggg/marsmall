@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/marsmall.iml" filepath="$PROJECT_DIR$/.idea/marsmall.iml" />
+      <module fileurl="file://$PROJECT_DIR$/marsmall-common/marsmall-common.iml" filepath="$PROJECT_DIR$/marsmall-common/marsmall-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/marsmall-coupon/marsmall-coupon.iml" filepath="$PROJECT_DIR$/marsmall-coupon/marsmall-coupon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/marsmall-gateway/marsmall-gateway.iml" filepath="$PROJECT_DIR$/marsmall-gateway/marsmall-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/marsmall-member/marsmall-member.iml" filepath="$PROJECT_DIR$/marsmall-member/marsmall-member.iml" />
+      <module fileurl="file://$PROJECT_DIR$/marsmall-order/marsmall-order.iml" filepath="$PROJECT_DIR$/marsmall-order/marsmall-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/marsmall-product/marsmall-product.iml" filepath="$PROJECT_DIR$/marsmall-product/marsmall-product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/marsmall-third-party/marsmall-third-party.iml" filepath="$PROJECT_DIR$/marsmall-third-party/marsmall-third-party.iml" />
+      <module fileurl="file://$PROJECT_DIR$/marsmall-ware/marsmall-ware.iml" filepath="$PROJECT_DIR$/marsmall-ware/marsmall-ware.iml" />
+      <module fileurl="file://$PROJECT_DIR$/renren-fast/renren-fast.iml" filepath="$PROJECT_DIR$/renren-fast/renren-fast.iml" />
+      <module fileurl="file://$PROJECT_DIR$/renren-generator/renren-generator.iml" filepath="$PROJECT_DIR$/renren-generator/renren-generator.iml" />
+    </modules>
+  </component>
+</project>

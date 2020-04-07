@@ -18,6 +18,7 @@
         <module>marsmall-order</module>
         <module>marsmall-ware</module>
         <module>marsmall-gateway</module>
+        <module>marsmall-third-party</module>
         <module>renren-fast</module>
         <module>renren-generator</module>
     </modules>

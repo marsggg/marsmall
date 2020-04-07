@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: marsmall-product
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848

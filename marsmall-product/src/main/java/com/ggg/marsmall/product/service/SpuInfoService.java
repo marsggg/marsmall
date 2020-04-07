@@ -2,7 +2,9 @@ package com.ggg.marsmall.product.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.ggg.common.utils.PageUtils;
+import com.ggg.marsmall.product.entity.SpuInfoDescEntity;
 import com.ggg.marsmall.product.entity.SpuInfoEntity;
+import com.ggg.marsmall.product.vo.SpuSaveVo;
 
 import java.util.Map;
 
@@ -16,5 +18,11 @@ import java.util.Map;
 public interface SpuInfoService extends IService<SpuInfoEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    void saveSpuInfo(SpuSaveVo vo);
+
+    void saveBaseSpuInfo(SpuInfoEntity spuInfoEntity);
+
+    PageUtils queryPageByCondition(Map<String, Object> params);
 }
 
